@@ -1,0 +1,8 @@
+# local files
+.env
+node_modules
+*lock.yaml
+__pycache__
+*.png
+.DS_Store
+.idea

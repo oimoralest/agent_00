@@ -1,0 +1,7 @@
+[project]
+name = "agent_00"
+version = "0.0.1"
+
+[tool.pyright]
+venv = "/Users/oscarmorales/miniconda3/envs/agent_00"
+venvPath = "/Users/oscarmorales/miniconda3/envs/agent_00"
