@@ -90,7 +90,7 @@ python cli.py project create
 
 It will prompt you the required information to create a project. When project is created, the project info will be displayed.
 
-![Create project](/backend/images/create_project.png)
+![Create project](./backend/images/create_project.png)
 
 ##### Create an agent
 
