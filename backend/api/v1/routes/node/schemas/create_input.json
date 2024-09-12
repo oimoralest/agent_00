@@ -1,0 +1,67 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Create Input Node",
+    "description": "Creates a agent input node",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "The name of the node",
+            "type": "string"
+        },
+        "description": {
+            "description": "The description of the node",
+            "type": "string"
+        },
+        "type": {
+            "description": "The type of the node",
+            "type": "string",
+            "enum": ["input"]
+        },
+        "start": {
+            "description": "If the node is the start node",
+            "type": "boolean"
+        },
+        "end": {
+            "description": "If the node is the end node",
+            "type": "boolean"
+        },
+        "output": {
+            "description": "The output of the node",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The name of the output",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of the output",
+                    "type": "string",
+                    "enum": ["str", "json", "int", "bool"]
+                }
+            },
+            "required": ["name", "type"]
+        },
+        "value": {
+            "description": "The value of the node",
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "boolean"
+                },
+                {
+                    "type": "object"
+                }
+            ]
+        },
+        "target_id": {
+            "description": "The target identifier",
+            "type": "string"
+        }
+    },
+    "required": ["name", "description", "type", "output", "value", "target"]
+}

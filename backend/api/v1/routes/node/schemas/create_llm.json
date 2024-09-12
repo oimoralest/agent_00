@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Create LLM Node",
+  "description": "Create a new LLM node",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Name of the node",
+      "type": "string"
+    },
+    "description": {
+      "description": "Description of the node",
+      "type": "string"
+    },
+    "type": {
+      "description": "Type of the node",
+      "type": "string",
+      "enum": ["llm"]
+    },
+    "start": {
+      "description": "Is this the starting node?",
+      "type": "boolean"
+    },
+    "end": {
+      "description": "Is this the ending node?",
+      "type": "boolean"
+    },
+    "target_id": {
+      "description": "Target node identifier",
+      "type": "string"
+    },
+    "agent_id": {
+      "description": "Agent identifier",
+      "type": "string"
+    },
+    "model": {
+      "description": "Model configuration",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Model name",
+          "type": "string",
+          "enum": ["gpt-4o"]
+        },
+        "temperature": {
+          "description": "Temperature",
+          "type": "number"
+        }
+      },
+      "required": ["name", "temperature"]
+    },
+    "prompt": {
+      "description": "Prompt for the model",
+      "type": "string"
+    },
+    "inputs": {
+      "description": "Input names",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output": {
+      "description": "Output configuration",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Output name",
+          "type": "string"
+        },
+        "type": {
+          "description": "Output kind",
+          "type": "string",
+          "enum": ["str"]
+        }
+      },
+      "required": ["name", "type"]
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "agent_id",
+    "model",
+    "prompt",
+    "output"
+  ]
+}
